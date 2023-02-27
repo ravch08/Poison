@@ -1,0 +1,53 @@
+@use '../abstracts/helper'as *;
+
+.btn {
+   border: none;
+   font-size: $fs-h6;
+   padding: 1.5rem 6rem;
+   display: inline-block;
+   letter-spacing: 0.2rem;
+   text-transform: uppercase;
+
+
+}
+
+.btn-small {
+   border: none;
+   color: white;
+   display: flex;
+   font-size: 1.2rem;
+   padding: 1rem 2rem;
+   letter-spacing: 0.2rem;
+   text-transform: uppercase;
+   background-color: $color-btn-primary;
+   transition: background-color 0.3s ease-in-out;
+
+   svg {
+      fill: white;
+      transform: translate(0.5rem, 0.1rem);
+   }
+
+   &:hover {
+      background-color: darken($color-btn-primary, 5%);
+   }
+}
+
+.btn-primary {
+   color: white;
+   background-color: $color-btn-primary;
+   transition: background-color 0.3s ease-in-out;
+
+   &:hover {
+      background-color: darken($color-btn-primary, 5%);
+   }
+}
+
+.btn-secondary {
+   color: $color-btn-primary;
+   background-color: white;
+   transition: background-color 0.3s ease-in-out;
+
+   &:hover {
+      background-color: hsl(0, 0%, 93%);
+   }
+}

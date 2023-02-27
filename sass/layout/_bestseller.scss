@@ -1,0 +1,87 @@
+@use '../abstracts/helper'as *;
+
+.bestseller-wrapper {
+   @extend .flexRow-between;
+
+   h2 {
+      padding: 1.2rem 0;
+   }
+
+   span {
+      font-size: $fs-h6;
+      color: $color-Dark-100;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+   }
+
+   p {
+      margin-bottom: 4rem;
+   }
+
+   .bestseller-content {
+      flex-basis: 45%;
+      margin-right: 4rem;
+   }
+
+   figure {
+      flex-basis: 50%;
+   }
+}
+
+.newsletter-wrapper {
+   text-align: center;
+
+   span {
+      font-size: $fs-h6;
+      color: $color-Dark-100;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+   }
+
+   h2 {
+      padding: 2rem 0 5rem;
+   }
+
+   input {
+      border: none;
+      border-bottom: 0.1rem solid black;
+   }
+
+   form {
+      width: 60%;
+      margin-inline: auto;
+   }
+
+   input[type="email"] {
+      width: 80%;
+      padding: 1.2rem 2.5rem 1.2rem 1rem;
+
+      &::placeholder {
+         color: $color-hover;
+         text-transform: uppercase;
+         transition: letter-spacing 0.3s ease-in-out;
+      }
+
+      &:focus {
+         outline: none;
+
+         &::placeholder {
+            letter-spacing: 0.3rem;
+         }
+      }
+   }
+
+   input[type="submit"] {
+      color: black;
+      cursor: pointer;
+      padding: 1.2rem 3rem;
+      text-transform: uppercase;
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+      &:hover {
+         color: white;
+         background-color: $color-btn-primary;
+      }
+   }
+}

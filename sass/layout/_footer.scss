@@ -1,0 +1,64 @@
+@use "../abstracts/helper"as *;
+
+footer {
+   padding: 10rem 0;
+   background-color: $color-secondary;
+
+   h3,
+   img {
+      margin-bottom: 1.5rem;
+   }
+
+   .footer-wrapper {
+      @extend .flexRow-between;
+   }
+
+   .address,
+   .contact {
+      display: flex;
+      flex-direction: column;
+
+      a {
+         padding: 0.4rem 0;
+         color: $color-primary;
+         transition: color 0.3s ease-in-out;
+
+         &:hover {
+            color: $color-btn-primary;
+         }
+      }
+   }
+
+   .ftr-logo {
+      width: 30%;
+      text-align: center;
+   }
+
+   .contact {
+      text-align: right;
+   }
+}
+
+.scrollTop {
+   right: 5%;
+   bottom: 5%;
+   position: fixed;
+   cursor: pointer;
+   transform: scale(0);
+   padding: 1rem 1.6rem;
+   background-color: white;
+   transition: transform .3s ease-in-out;
+   border: 0.1rem solid hsl(0, 0%, 77%);
+
+   svg {
+      fill: $color-btn-primary;
+   }
+
+   &.show {
+      transform: scale(1);
+   }
+
+   &:hover {
+      background-color: $color-secondary;
+   }
+}

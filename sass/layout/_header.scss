@@ -1,0 +1,199 @@
+@use "../abstracts/helper"as *;
+
+header {
+   width: 100%;
+   padding: 2rem 0;
+   position: relative;
+   top: 0;
+   left: 0;
+   z-index: 99;
+   background-color: transparent;
+   transition: padding 0.3s ease-in-out;
+
+   .header-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   nav,
+   .user,
+   .nav-list {
+      @extend .flexRow-between;
+   }
+
+   nav {
+      width: 100%;
+   }
+
+   .nav-brand {
+      padding: 4rem 0;
+   }
+
+   &.sticky {
+      padding: 1rem 0;
+      position: fixed;
+      background-color: white;
+      box-shadow: $box-shadow-md;
+   }
+}
+
+.nav-list {
+   gap: 2rem;
+
+   .nav-items {
+      display: flex;
+   }
+
+   .nav-link {
+      padding: 1.4rem 1rem;
+      font-size: $fs-h6;
+      font-weight: 500;
+      color: $color-primary;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+         color: $color-btn-primary;
+      }
+   }
+}
+
+.user {
+   svg {
+      fill: $color-Dark-100;
+      transition: fill 0.3s ease-in-out;
+
+      &:hover {
+         fill: $color-btn-primary;
+      }
+   }
+}
+
+.cart-wrapper {
+   color: white;
+   position: relative;
+   margin-right: 2rem;
+
+   hr {
+      height: 0.05rem;
+      margin: 1.5rem 0;
+      color: hsla(0, 4%, 86%, 0.161);
+   }
+
+   p {
+      font-size: 1.4rem;
+
+      span {
+         font-weight: bold;
+      }
+   }
+
+   .cart-details {
+      position: absolute;
+      top: 5.2rem;
+      right: 0;
+      z-index: 0;
+      width: 30rem;
+      padding: 1.8rem;
+      visibility: hidden;
+      box-shadow: $box-shadow-md;
+      background-color: $color-Dark-100;
+      transition: z-index 0.3s ease-in, visibility 0.3s ease-in;
+   }
+
+   &:hover .cart-details {
+      z-index: 9;
+      visibility: visible;
+   }
+
+   .cart-detail-footer {
+      @extend .flexRow-between;
+   }
+}
+
+.hamburger-menu {
+   width: 3.2rem;
+   height: 3rem;
+   cursor: pointer;
+   margin-left: 2.5rem;
+   @extend .flexColumn-evenly;
+
+   .line {
+      width: 3.2rem;
+      height: 0.2rem;
+      background-color: $color-primary;
+      transition: width 0.3s ease-in-out;
+   }
+
+   &:hover .line {
+
+      &:first-child {
+         width: 25%;
+      }
+
+      &:nth-child(2) {
+         width: 50%;
+      }
+   }
+}
+
+.sidebar-menu {
+   top: 0;
+   right: -30%;
+   width: 25%;
+   z-index: 99;
+   height: 100vh;
+   position: fixed;
+   padding: 4rem 3rem;
+   box-shadow: $box-shadow-md;
+   @extend .flexColumn-between;
+   background-color: $color-light-100;
+
+   .sidebar-top {
+      width: 100%;
+      @extend .flexRow-between;
+   }
+
+   .nav-list {
+      align-items: flex-start;
+      @extend .flexColumn-start;
+   }
+
+   .sidebar-items {
+      display: flex;
+   }
+
+   .sidebar-link {
+      padding: 2rem 0;
+      color: $color-primary;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+         color: $color-btn-primary;
+      }
+   }
+
+   .sidebar-footer {
+      width: 100%;
+      text-align: center;
+      @extend .flexRow-evenly;
+   }
+
+   .btn-close {
+      transform-origin: center;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+         transform: rotate(180deg);
+      }
+   }
+}
+
+.banner {
+   padding: 0 0 8rem 0;
+}
+
+#swiper-banner {
+   height: 65vh;
+   overflow-y: hidden;
+}
